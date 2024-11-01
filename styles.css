@@ -1,0 +1,14 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  background-color: #eee;
+}
+
+svg {
+  padding: 2rem;
+  text-align: center;
+}
+
+#legend {
+  filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
+}
