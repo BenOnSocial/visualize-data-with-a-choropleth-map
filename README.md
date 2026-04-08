@@ -4,6 +4,8 @@
 
 This project is part of my [Data Visualization V8 certification from freeCodeCamp](https://www.freecodecamp.org/certification/benonsocial/data-visualization).
 
+https://github.com/user-attachments/assets/a4ab4a15-4c8e-4a3b-9e09-6ada024087de
+
 ## Objective
 
 Build an app that is functionally similar to this: https://choropleth-map.freecodecamp.rocks.
