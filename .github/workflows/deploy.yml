@@ -12,6 +12,8 @@ permissions:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -19,19 +21,19 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
           cache: "npm"
 
       - name: Install dependencies
-        run: npm install
+        run: npm install --if-present
 
       - name: Build
-        run: npm run build # Ensure this script exists in package.json
+        run: npm run build --if-present
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: "./dist" # Folder where your built files live
+          path: "."
 
       - name: Deploy to GitHub Pages
         id: deployment
