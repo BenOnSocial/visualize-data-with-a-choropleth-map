@@ -10,6 +10,39 @@
     <script type="module" src="script.js"></script>
   </head>
   <body>
+    <script>
+      (function () {
+        const PROJECT_NAME = 'choropleth';
+
+        // 1. Set localStorage immediately so the FCC suite picks it up on load
+        localStorage.setItem('fcc_test_suite_project', PROJECT_NAME);
+
+        // 2. Poll for the shadow DOM elements
+        const pollFCC = setInterval(() => {
+          const wrapper = document.getElementById('fcc_test_suite_wrapper');
+          if (!wrapper || !wrapper.shadowRoot) return;
+
+          const shadow = wrapper.shadowRoot;
+          const selector = shadow.querySelector('#test-suite-selector');
+          const runButton = shadow.querySelector('#fcc_test_message-box-rerun-button');
+
+          if (selector) {
+            if (selector.value !== PROJECT_NAME) {
+              selector.value = PROJECT_NAME;
+              // Use bubbles: true as the FCC script likely listens at a higher level
+              selector.dispatchEvent(new Event('change', { bubbles: true }));
+            }
+
+            // 3. If found, clear the interval and run tests
+            if (runButton) {
+              clearInterval(pollFCC);
+              setTimeout(() => runButton.click(), 500);
+            }
+          }
+        }, 200);
+      })();
+    </script>
+
     <h1 id="title">United States Educational Attainment</h1>
     <p id="description">
       Percentage of adults age 25 and older with a bachelor's degree or higher
