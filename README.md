@@ -1,5 +1,7 @@
 # Visualize Data with a Choropleth Map
 
+[![Deploy to GitHub Pages](https://github.com/BenOnSocial/visualize-data-with-a-choropleth-map/actions/workflows/deploy.yml/badge.svg)](https://github.com/BenOnSocial/visualize-data-with-a-choropleth-map/actions/workflows/deploy.yml)
+
 This project is part of my [Data Visualization V8 certification from freeCodeCamp](https://www.freecodecamp.org/certification/benonsocial/data-visualization).
 
 ## Objective
